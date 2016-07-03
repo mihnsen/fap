@@ -16,11 +16,12 @@ export default {
   path: '/',
 
   async action() {
-    const resp = await fetch('/graphql', {
+    const resp = await fetch('http://api.spingo.vn/categories?type=company', {
       method: 'post',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': ''
       },
       body: JSON.stringify({
         query: '{news{title,link,contentSnippet}}',
